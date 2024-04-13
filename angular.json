@@ -68,6 +68,9 @@
               "buildTarget": "test_angular:build:development"
             }
           },
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -97,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8e649f7d-49fb-455c-a9f4-25d4031b1e18"
   }
 }
