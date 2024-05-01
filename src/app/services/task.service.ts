@@ -19,14 +19,13 @@ export class TaskService {
     return this.http.get<Task>(url);
   }
 
-  addTask(Task: Task): Observable<Task> {
-    console.log(Task);
-    return this.http.post<Task>(this.apiUrl, Task);
+  addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.apiUrl, task);
   }
 
-  editTask(taskId: number, Task: Task): Observable<Task> {
+  editTask(taskId: number, task: Task): Observable<Task> {
     const url = `${this.apiUrl}/${taskId}`;
-    return this.http.patch<Task>(url, taskId);
+    return this.http.patch<Task>(url, task);
   }
 
   deleteTask(taskId: number): Observable<Task> {
