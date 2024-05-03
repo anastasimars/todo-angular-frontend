@@ -1,1 +1,37 @@
-<p>task-list works!</p>
+<p-table [value]="tasks">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Task ID</th>
+        <th>Title</th>
+        <th>Deadline</th>
+        <th>Status</th>
+        <th>Subtasks</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-task>
+      <tr>
+        <td>{{ task.techId }}</td>
+        <td>{{ task.taskTitle }}</td>
+        <td>{{ task.deadline }}</td>
+        <td>{{ task.status ? 'Done' : 'In progress' }}</td>
+        <td>
+            <p-table [value]="task.subtasks">
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>Subtask ID</th>
+                  <th>Subtask title</th>
+                  <th>Status</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-subtask>
+                <tr>
+                  <td>{{ subtask.techId }}</td>
+                  <td>{{ subtask.subtaskTitle }}</td>
+                  <td>{{ subtask.status ? 'Completed' : 'Pending' }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </td>
+      </tr>
+    </ng-template>
+  </p-table>

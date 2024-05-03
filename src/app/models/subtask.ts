@@ -1,7 +1,6 @@
 import { Task } from "./task";
 export interface Subtask {
-    id: number;
+    techId: number;
     subtaskTitle: string;
-    task: Task;
     status: boolean;
 }
